@@ -1,10 +1,24 @@
+import Container from "@/components/container";
 
 export default function Home() {
   return (
-    <>
-      <h1>
-        Home Page
-      </h1>
-    </>
+    <div className="bg-[url('/images/hero-page/hero-page-3.jpg')] bg-cover bg-center h-screen">
+      <div className="h-full bg-radial-[at_25%_25%] from-white/90 to-75% flex justify-center items-center">
+        <Container>
+          <div className="flex-col items-center justify-between space-y-7">
+            <h1 className="text-8xl text-center leading-[120%] font-kameron font-medium">
+              <span className="text-primary">Explore</span>
+              <br />
+              the world <br /> differently
+            </h1>
+            <div className="text-center text-lg font-medium">
+              <span className="text-primary font-semibold underline decoration-2 underline-offset-6">Unique</span> Tours
+              for <span className="text-primary font-semibold underline decoration-2 underline-offset-6">Unique</span>{" "}
+              User .
+            </div>
+          </div>
+        </Container>
+      </div>
+    </div>
   );
 }
