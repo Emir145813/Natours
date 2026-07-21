@@ -1,8 +1,7 @@
 import React from "react";
+import { IChildren } from "./interfaces";
 
-interface IChildren{
-  children : React.ReactNode
-}
+
 function Container({children} : IChildren) {
   return <div className="w-[90%] mx-auto">{children}</div>;
 }

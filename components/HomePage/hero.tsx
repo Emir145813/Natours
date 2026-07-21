@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../container";
 import { Button } from "../ui/button";
+import AppButton from "../ui/app-buttom";
 
 function Hero() {
   return (
@@ -25,7 +26,7 @@ function Hero() {
             </div>
           </div>
           <div className="flex items-center justify-center mt-8">
-            <Button className="px-4 py-5 rounded-full">Explore Tours</Button>
+            <AppButton>Explore Tours</AppButton>
           </div>
         </Container>
       </div>

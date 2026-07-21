@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import Container from "../container";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import AppButton from "../ui/app-buttom";
 
 function SearchBar() {
   return (
@@ -39,7 +40,7 @@ function SearchBar() {
             />
           </div>
         </div>
-        <Button className="px-4 py-6 rounded-full">Search Now</Button>
+        <AppButton>Search Now</AppButton>
       </div>
     </Container>
   );
