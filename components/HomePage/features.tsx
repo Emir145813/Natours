@@ -5,12 +5,12 @@ import { Icon } from "@iconify/react";
 function Features() {
   const featuresData = [
     {
-      icon: "solar:tag-price-linear",
+      icon: "solar:tag-price-outline",
       title: "Best Price Quarantee",
       desc: "We Quarantee Best The Best Price",
     },
     {
-      icon: "material-symbols-light:your-trips-outline",
+      icon: "material-symbols:for-you-outline-rounded",
       title: "Handpicked Tours",
       desc: "Carefully Picked For You",
     },
@@ -34,7 +34,7 @@ function Features() {
             <div key={item.title}>
               <div className="flex flex-col justify-center items-center gap-6">
                 <Icon
-                  icon="solar:tag-price-linear"
+                  icon={item.icon}
                   className="text-primary text-6xl"
                 />
                 <div className="flex flex-col justify-center items-center gap-1">

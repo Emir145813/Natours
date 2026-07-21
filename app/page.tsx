@@ -1,3 +1,4 @@
+import Features from "@/components/HomePage/features";
 import Hero from "@/components/HomePage/hero";
 import SearchBar from "@/components/HomePage/searchbar";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Hero/>
       <SearchBar/>
+      <Features/>
     </>
   );
 }
