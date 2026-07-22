@@ -1,4 +1,5 @@
-import Banner from "@/components/HomePage/banner";
+
+import Footer from "@/components/footer";
 import Hero from "@/components/HomePage/hero";
 import SearchBar from "@/components/HomePage/searchbar";
 
@@ -7,7 +8,6 @@ export default function Home() {
     <>
       <Hero/>
       <SearchBar/>
-      <Banner/>
     </>
   );
 }
