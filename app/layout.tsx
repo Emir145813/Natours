@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Kameron, Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import NavBar from "@/components/navbar";
 
 const inter = Inter({subsets:['latin'],variable:'--font-inter-regular'});
 const jakarta = Plus_Jakarta_Sans({subsets:['latin'],variable:'--font-jakarta-regular'});
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+        <NavBar/>
         {children}
       </body>
     </html>
