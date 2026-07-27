@@ -1,6 +1,6 @@
-export interface IChildren {
-  children: React.ReactNode;
-}
+"use client";
+import api from "@/lib/axion";
+import React, { useEffect, useState } from "react";
 
 export interface ITour {
   _id: string;
@@ -32,3 +32,25 @@ export interface Guide {
   changedPasswordAt?: string;
   role: string;
 }
+
+function Tours() {
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    api
+      .get("/tours/?sort=-ratingsAverage&limit=5")
+      .then((result) => setTours(result.data.data.doc))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  return (
+    <div>
+      {tours.map((item: ITour) => (
+        <div key={item._id}>{item.name}</div>
+      ))}
+    </div>
+  );
+}
+
+export default Tours;
