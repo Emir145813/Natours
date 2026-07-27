@@ -106,7 +106,7 @@ function Footer() {
   ];
 
   return (
-    <div className="bg-background border-t shadow-lg pt-10 mt-56">
+    <div className="bg-background border-t shadow-lg pt-10 mt-20">
       <Container>
         <div className="pb-10 flex space-x-20">
           <div className=" max-w-1/3 space-y-6">

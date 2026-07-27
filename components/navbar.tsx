@@ -9,7 +9,7 @@ function NavBar() {
   
 
   return (
-    <div className="w-full fixed mt-4">
+    <div className="w-full fixed mt-4 z-50">
       <Container>
         <div className="bg-background/70 backdrop-blur-md p-2 rounded-full shadow-sm grid grid-cols-3 items-center justify-between">
           <div className="flex items-center justify-start gap-2">

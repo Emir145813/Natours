@@ -1,14 +1,13 @@
 import React from "react";
 import Container from "../container";
-import { Button } from "../ui/button";
 import AppButton from "../ui/app-buttom";
 
 function Hero() {
   return (
-    <div className="bg-[url('/images/hero-page/hero-page-3.jpg')] bg-cover bg-center h-screen">
-      <div className="h-full bg-radial-[at_25%_25%] from-white/90 to-75% flex justify-center items-center">
+    <div className="bg-[url('/images/hero-page/hero-page-3.jpg')] bg-cover bg-center min-h-[90vh] rounded-b-3xl">
+      <div className="min-h-[90vh] bg-radial-[at_25%_25%] from-white/90 to-50% flex justify-center items-center">
         <Container>
-          <div className="flex-col items-center justify-center ">
+          <div className="h-full flex flex-col items-center justify-center">
             <h1 className="text-8xl text-center leading-[120%] font-kameron font-medium">
               <span className="text-primary">Explore</span>
               <br />
@@ -26,7 +25,7 @@ function Hero() {
             </div>
           </div>
           <div className="flex items-center justify-center mt-8">
-            <AppButton>Explore Tours</AppButton>
+            <AppButton href="/tours">Explore Tours</AppButton>
           </div>
         </Container>
       </div>
