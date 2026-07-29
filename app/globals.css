@@ -17,6 +17,11 @@
   @apply transition-all duration-300;
 }
 
+.swiper-pagination-bullet-active {
+  background-color: var(--primary) !important;
+  box-shadow: 0 0 10px rgba(15, 118, 110, 0.4);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

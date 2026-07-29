@@ -32,3 +32,20 @@ export interface Guide {
   changedPasswordAt?: string;
   role: string;
 }
+
+
+export interface IReview {
+  _id?: string
+  review?: string
+  rate?: number
+  createdAt?: string
+  tour?: string
+  user?: User
+  id?: string
+}
+
+export interface User {
+  _id: string
+  name: string
+  email: string
+}

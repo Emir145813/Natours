@@ -69,9 +69,10 @@ function ToursCarousel() {
           nextEl: ".next-btn",
           prevEl: ".prev-btn",
         }}
+        className=" bg-background rounded-2xl border"
       >
         {tours.map((tour: ITour) => (
-          <SwiperSlide key={tour.id} className="p-2">
+          <SwiperSlide key={tour.id} className="p-5">
             <ProductCard props={tour} />
           </SwiperSlide>
         ))}

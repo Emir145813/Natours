@@ -8,7 +8,7 @@ function ToursShowCase() {
   return (
     <div>
       <Container>
-        <div className="bg-background border p-6 rounded-4xl w-full flex flex-col gap-8">
+        <div className="bg-card border p-6 rounded-4xl w-full flex flex-col gap-8">
           <div className="flex justify-between items-center">
             <span className="font-bold text-primary text-3xl">
               Featured Tours
