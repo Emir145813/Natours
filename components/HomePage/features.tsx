@@ -29,7 +29,7 @@ function Features() {
   return (
     <div>
       <Container>
-        <div className="w-full py-10 px-20 flex justify-between items-center rounded-xl shadow-md bg-amber-100/40">
+        <div className="w-full py-10 px-20 flex justify-between items-center rounded-xl shadow-soft bg-amber-100/40">
           {featuresData.map((item) => (
             <div key={item.title}>
               <div className="flex flex-col justify-center items-center gap-6">

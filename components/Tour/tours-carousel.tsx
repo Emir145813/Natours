@@ -1,44 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ProductCard from "../ui/product-card";
 import api from "@/lib/axion";
 import { SlideLeft, SlideRight } from "../ui/Swiper/silder-button";
+import { ITour } from "../interfaces";
 
-export interface ITour {
-  _id: string;
-  name: string;
-  duration: number;
-  maxGroupSize: number;
-  difficulty: string;
-  ratingsAverage: number;
-  ratingsQuantity: number;
-  price: number;
-  summary: string;
-  description: string;
-  imageCover: string;
-  images: string[];
-  createdAt: string;
-  startDates: string[];
-  secretTour: boolean;
-  guides: Guide[];
-  slug: string;
-  durationInWeeks: number;
-  id: string;
-}
-
-export interface Guide {
-  _id: string;
-  name: string;
-  email: string;
-  password: string;
-  changedPasswordAt?: string;
-  role: string;
-}
 
 function ToursCarousel() {
   const [tours, setTours] = useState([]);
@@ -53,7 +24,7 @@ function ToursCarousel() {
   }, []);
   return (
     <div>
-      <div className="space-x-2 mb-2">
+      <div className="space-x-2 mb-4">
         <button className={`prev-btn`}>
           <SlideLeft />
         </button>

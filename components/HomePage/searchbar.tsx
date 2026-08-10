@@ -8,7 +8,7 @@ import AppButton from "../ui/app-buttom";
 function SearchBar() {
   return (
     <Container>
-      <div className="w-full h-40 bg-background/70 shadow-lg backdrop-blur-md rounded-4xl -mt-20 flex justify-between items-center p-8">
+      <div className="w-full h-40 bg-background/70 shadow-soft backdrop-blur-md rounded-4xl -mt-20 flex justify-between items-center p-8">
         <div className="flex justify-between items-center gap-2">
           <Icon
             width={50}

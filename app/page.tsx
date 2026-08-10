@@ -3,7 +3,7 @@ import Features from "@/components/HomePage/features";
 import Hero from "@/components/HomePage/hero";
 import RecentReviews from "@/components/HomePage/recent-reviews";
 import SearchBar from "@/components/HomePage/searchbar";
-import ToursShowCase from "@/components/Tours/tours-show-case";
+import ToursShowCase from "@/components/Tour/tours-show-case";
 
 export default function Home() {
   return (
@@ -12,10 +12,12 @@ export default function Home() {
         <Hero />
         <SearchBar />
       </div>
-      <Features />
-      <ToursShowCase />
-      <RecentReviews />
-      <Banner />
+      <div className="mb-20 space-y-20">
+        <Features />
+        <ToursShowCase />
+        <RecentReviews />
+        <Banner />
+      </div>
     </div>
   );
 }

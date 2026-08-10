@@ -6,6 +6,7 @@ export interface ITour {
   _id: string;
   name: string;
   duration: number;
+  startLocation: StartLocation;
   maxGroupSize: number;
   difficulty: string;
   ratingsAverage: number;
@@ -18,34 +19,57 @@ export interface ITour {
   createdAt: string;
   startDates: string[];
   secretTour: boolean;
-  guides: Guide[];
+  locations: Location[];
+  guides: IGuide[];
+  reviews : IReview[];
   slug: string;
   durationInWeeks: number;
   id: string;
 }
 
-export interface Guide {
+export interface StartLocation {
+  _id: string;
+  description: string;
+  coordinates: number[];
+  address: string;
+  id: string;
+}
+
+export interface Location {
+  destination: Destination;
+  day: number;
+  _id: string;
+  id: string;
+}
+
+export interface Destination {
+  _id: string;
+  description: string;
+  coordinates: number[];
+  address: string;
+  id: string;
+}
+
+export interface IGuide {
   _id: string;
   name: string;
-  email: string;
-  password: string;
-  changedPasswordAt?: string;
+  avatar: string;
   role: string;
 }
 
-
 export interface IReview {
-  _id?: string
-  review?: string
-  rate?: number
-  createdAt?: string
-  tour?: string
-  user?: User
-  id?: string
+  _id: string
+  review: string
+  rate: number
+  createdAt: string
+  tour: string
+  user: IUser
+  id: string
 }
 
-export interface User {
+export interface IUser {
   _id: string
   name: string
   email: string
+  avatar : string
 }

@@ -11,7 +11,7 @@
 }
 
 .swiper-button-disabled {
-  @apply opacity-40 pointer-events-none;
+  @apply opacity-50 pointer-events-none backdrop-blur-md;
 }
 .navigation-btn {
   @apply transition-all duration-300;
@@ -148,4 +148,9 @@
   html {
     @apply font-sans;
   }
+}
+
+
+@theme {
+  --shadow-soft : 0px 0px 12px -1px rgba(0,0,0,0.1);
 }

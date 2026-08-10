@@ -6,7 +6,7 @@ function Banner() {
   return (
     <div>
       <Container>
-        <div className="bg-[url('/images/banner.png')] bg-cover bg-bottom shadow-lg rounded-4xl p-10 ">
+        <div className="bg-[url('/images/banner.png')] bg-cover bg-bottom shadow-soft rounded-4xl p-10 ">
           <div className="flex flex-col gap-1">
             <h1 className="font-bold text-3xl text-primary font-kameron z-50">
               Ready For Your Next Adventure ?
