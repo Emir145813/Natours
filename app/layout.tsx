@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, Geist, Playwrite_AU_NSW } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Geist, Playwrite_AU_NSW, Kameron } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Variable } from "lucide-react";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const inter = Inter({
-  variable: "--font-inter-regular",
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter-regular" });
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  variable: "--font-jakarta-regular",
 });
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const kameron = Kameron({
   subsets: ["latin"],
+  variable: "--font-kameron-regular",
 });
 
 const playwrite = Playwrite_AU_NSW({
@@ -30,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable,playwrite.variable , inter.variable , plusJakartaSans.variable)}>
+    <html lang="en" className={cn("font-sans", kameron.variable,playwrite.variable , inter.variable , jakarta.variable)}>
       <body
         className={`antialiased`}
       >
