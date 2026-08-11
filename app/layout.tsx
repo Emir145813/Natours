@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, Geist } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Geist, Playwrite_AU_NSW } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Variable } from "lucide-react";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -13,6 +14,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
 });
+
+const playwrite = Playwrite_AU_NSW({
+  variable : "--font-playwrite", 
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body
-        className={`${plusJakartaSans.className} ${inter.variable} antialiased`}
+        className={`${plusJakartaSans.className} ${inter.variable} ${playwrite.variable} antialiased`}
       >
         {children}
       </body>
