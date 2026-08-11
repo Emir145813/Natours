@@ -30,9 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en" className={cn("font-sans", geist.variable,playwrite.variable , inter.variable , plusJakartaSans.variable)}>
       <body
-        className={`${plusJakartaSans.className} ${inter.variable} ${playwrite.variable} antialiased`}
+        className={`antialiased`}
       >
         {children}
       </body>
