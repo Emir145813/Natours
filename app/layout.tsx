@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, Geist, Playwrite_AU_NSW, Kameron } from "next/font/google";
+import {
+  Inter,
+  Plus_Jakarta_Sans,
+  Geist,
+  Playwrite_AU_NSW,
+} from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Variable } from "lucide-react";
+import MainLayout from "@/providers/main-layout";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter-regular" });
-const jakarta = Plus_Jakarta_Sans({
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+
+const inter = Inter({
+  variable: "--font-inter-regular",
   subsets: ["latin"],
-  variable: "--font-jakarta-regular",
 });
-const kameron = Kameron({
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  variable: "--font-kameron-regular",
 });
 
 const playwrite = Playwrite_AU_NSW({
-  variable : "--font-playwrite", 
-})
+  variable: "--font-playwrite",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,11 +35,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", kameron.variable,playwrite.variable , inter.variable , jakarta.variable)}>
-      <body
-        className={`antialiased`}
-      >
-        {children}
+    <html
+      lang="en"
+      className={cn(
+        "font-sans",
+        geist.variable,
+        playwrite.variable,
+        inter.variable,
+        plusJakartaSans.variable,
+      )}
+    >
+      <body className={`antialiased`}>
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );
