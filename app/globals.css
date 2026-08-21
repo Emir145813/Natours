@@ -8,18 +8,7 @@
   --font-jakarta: var(--font-jakarta-regular);
   --font-inter: var(--font-inter-regular);
   --font-kameron: var(--font-kameron-regular);
-}
-
-.swiper-button-disabled {
-  @apply opacity-50 pointer-events-none backdrop-blur-md;
-}
-.navigation-btn {
-  @apply transition-all duration-300;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--primary) !important;
-  box-shadow: 0 0 10px rgba(15, 118, 110, 0.4);
+  --font-playwrite: var(--font-playwrite);
 }
 
 @theme inline {

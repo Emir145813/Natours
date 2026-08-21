@@ -17,7 +17,7 @@ async function Tour(props: IParams) {
   const tour: ITour = await getTour(id);
 
   return (
-    <div className="mt-32">
+    <div className="pt-32">
       <Container>
         <div className="w-full min-h-screen space-y-8">
           <div className="h-162 w-full">
