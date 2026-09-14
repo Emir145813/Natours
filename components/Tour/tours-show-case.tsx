@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Container from "../container";
 import { Icon } from "@iconify/react";
@@ -15,11 +15,11 @@ function ToursShowCase() {
             </span>
             <div className="flex justify-between items-center gap-1 transition-all duration-300 hover:gap-2 hover:text-primary ">
               <span className="font-medium">View All Tours</span>
-              <Icon icon="mingcute:right-fill" className=""/>
+              <Icon icon="mingcute:right-fill" className="" />
             </div>
           </div>
           <div className="h-full">
-            <ToursCarousel/>
+            <ToursCarousel />
           </div>
         </div>
       </Container>

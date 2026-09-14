@@ -2,10 +2,8 @@ import React from "react";
 import { Button } from "./button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { AppButtonProps } from "../interfaces";
 
-type AppButtonProps = React.ComponentProps<typeof Button> & {
-  href?: string;
-};
 
 function AppButton({ className, ...props }: AppButtonProps) {
   if (props.href) {

@@ -119,7 +119,11 @@ function Footer() {
             </p>
             <ul className="flex gap-2">
               {socialLinks.map((item) => (
-                <Link key={item.name} href={item.href} className="hover:scale-105 transition-all">
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="hover:scale-105 transition-all"
+                >
                   <li
                     className={`border-2 w-fit ${item.color} rounded-full p-2 ${item.border}`}
                   >

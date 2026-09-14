@@ -1,10 +1,6 @@
-import { ITour } from "@/components/interfaces";
+import { Itour } from "@/components/interfaces";
 import { Icon } from "@iconify/react";
 import React from "react";
-
-interface Itour {
-  tour: ITour;
-}
 
 function ImportantInfo({ tour }: Itour) {
   const InfoList = [

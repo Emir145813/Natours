@@ -139,6 +139,28 @@
   }
 }
 
+@keyframes enter-animation {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+.soft-transition {
+  animation : enter-animation 300ms ease-out;
+}
+
+.swiper-button-disabled{
+  opacity : 0.5;
+}
+.swiper-pagination-bullet-active{
+  background-color : var(--primary)!important;
+}
 
 @theme {
   --shadow-soft : 0px 0px 12px -1px rgba(0,0,0,0.1);

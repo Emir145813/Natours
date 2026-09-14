@@ -1,32 +1,30 @@
 import React from "react";
-import { ITour } from "./interfaces";
+import { ITourProps } from "./interfaces";
 import { Icon } from "@iconify/react";
 import { DatePickerInput } from "./ui/date-picker";
 import AppButton from "./ui/app-buttom";
 
-interface ITourProps {
-  tourInfo: ITour;
-}
-
 function Bookingcard({ tourInfo }: ITourProps) {
-
   const benefitsList = [
     {
-      title : "Free cancelation upto 20 hours"
+      title: "Free cancelation upto 20 hours",
     },
     {
-      title : "Instant confirmation"
-    },{
-      title : "Secure online payment"
-    },{
-      title : "Local expert guides"
-    },{
-      title : "Top-rated experience"
-    }
-  ]
+      title: "Instant confirmation",
+    },
+    {
+      title: "Secure online payment",
+    },
+    {
+      title: "Local expert guides",
+    },
+    {
+      title: "Top-rated experience",
+    },
+  ];
 
   return (
-    <div className="bg-card p-4 space-y-4 rounded-xl w-full shadow-soft ">
+    <div className="bg-card p-4 space-y-4 rounded-xl w-full shadow-soft">
       <div className="flex items-center justify-between">
         <span className="text-primary text-xl font-semibold">Tour Summary</span>
         <Icon
@@ -45,7 +43,7 @@ function Bookingcard({ tourInfo }: ITourProps) {
               />
             </span>
             <span className="text-4xl text-primary">
-              {tourInfo.price.toLocaleString()}
+              {tourInfo?.price.toLocaleString()}
             </span>
           </div>
           <span className="text-sm text-foreground/50 font-medium ml-2">
@@ -60,11 +58,11 @@ function Bookingcard({ tourInfo }: ITourProps) {
               className="text-accent"
             />
             <span className="text-lg font-medium">
-              {tourInfo.ratingsAverage}
+              {tourInfo?.ratingsAverage}
             </span>
           </div>
           <span className="opacity-50 text-sm">
-            ({tourInfo.ratingsQuantity} Reviews)
+            ({tourInfo?.ratingsQuantity} Reviews)
           </span>
         </div>
       </div>
@@ -73,14 +71,17 @@ function Bookingcard({ tourInfo }: ITourProps) {
       <div>
         <span className="mb-2 block font-medium">Why book with us ?</span>
         <ul className="space-y-2">
-          {
-            benefitsList.map((benefit , index)=>(
-              <li key={index} className="flex items-center gap-1">
-                <Icon icon="reicon:shield-tick-filled" className="text-primary text-xl"/>
-                <span className="text-foreground/50 text-sm ">{benefit.title}</span>
-              </li>
-            ))
-          }
+          {benefitsList.map((benefit, index) => (
+            <li key={index} className="flex items-center gap-1">
+              <Icon
+                icon="reicon:shield-tick-filled"
+                className="text-primary text-xl"
+              />
+              <span className="text-foreground/50 text-sm ">
+                {benefit.title}
+              </span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

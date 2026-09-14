@@ -1,17 +1,15 @@
-import { Location } from "@/components/interfaces";
+import { IItineraryProps } from "@/components/interfaces";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import React from "react";
 
 
-interface IItineraryProps {
-  locations: Location[];
-}
+
 
 function Itinerary({ locations }: IItineraryProps) {
   return (
-    <div className="relative flex flex-col gap-8">
-      {locations.map((location, index) => (
+    <div className="relative flex flex-col gap-8 soft-transition">
+      {locations?.map((location, index) => (
         <div
           key={index}
           className="flex items-center gap-8  before:absolute before:left-7.5 before:top-0 before:h-full before:w-0.5 before:bg-primary"

@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import MainLayout from "@/providers/main-layout";
+import { Suspense } from "react";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -46,9 +47,9 @@ export default function RootLayout({
       )}
     >
       <body className={`antialiased`}>
-        <MainLayout>
-          {children}
-        </MainLayout>
+        <Suspense>
+          <MainLayout>{children}</MainLayout>
+        </Suspense>
       </body>
     </html>
   );

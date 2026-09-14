@@ -6,12 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { SlideLeft, SlideRight } from "./silder-button";
+import { IProps } from "@/components/interfaces";
 
-interface IProps {
-  props: string[];
-}
-
-function ImageGallery({ props }: IProps) {
+function ImageGallery({ images }: IProps) {
   return (
     <div className="rounded-2xl border h-full overflow-hidden relative">
       <Swiper
@@ -22,7 +19,7 @@ function ImageGallery({ props }: IProps) {
         }}
         className="object-cover h-full"
       >
-        {props.map((image, index) => (
+        {images?.map((image, index) => (
           <SwiperSlide key={index}>
             <Image src={image} alt="tour-image" fill={true} />
           </SwiperSlide>

@@ -1,22 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import Container from "../container";
-import ReviewCard from "../review-card";
-import api from "@/lib/axion";
+import { ReviewCard, ReviewCardSkeleton } from "../review-card";
 import { IReview } from "../interfaces";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useGetRecentReviews } from "@/hooks/get-review";
+import { FetchingErrorSimple } from "../fetching-data-error";
 
 function RecentReviews() {
-  const [reviews, setReview] = useState([]);
-  useEffect(() => {
-    api
-      .get("/reviews?sort=-createdAt&limit=10")
-      .then((result) => setReview(result.data.data.doc))
-      .catch((err) => console.log(err));
-  }, []);
+  const {
+    data: reviews,
+    isLoading,
+    isError,
+    error,
+    refetch,
+  } = useGetRecentReviews();
 
   return (
     <div className="w-full">
@@ -25,19 +25,27 @@ function RecentReviews() {
           <p className="font-bold text-primary text-3xl text-center mb-6">
             Recently Added Reviews
           </p>
-          <Swiper
-            modules={[Pagination, A11y]}
-            spaceBetween={0}
-            slidesPerView={4}
-            pagination={{ clickable: true }}
-            className=" bg-background rounded-2xl border"
-          >
-            {reviews.map((review: IReview) => (
-              <SwiperSlide key={review.id} className="p-5 mb-6">
-                <ReviewCard props={review} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className=" bg-background rounded-2xl border">
+            {isError && <FetchingErrorSimple error={error} refetch={refetch} />}
+            <Swiper
+              modules={[Pagination, A11y]}
+              spaceBetween={0}
+              slidesPerView={4}
+              pagination={{ clickable: true }}
+            >
+              {isLoading
+                ? Array.from({ length: 10 }).map((_, index) => (
+                    <SwiperSlide key={index} className="p-5 mb-6">
+                      <ReviewCardSkeleton />
+                    </SwiperSlide>
+                  ))
+                : reviews?.map((review: IReview) => (
+                    <SwiperSlide key={review.id} className="p-5 mb-6">
+                      <ReviewCard props={review} />
+                    </SwiperSlide>
+                  ))}
+            </Swiper>
+          </div>
         </div>
       </Container>
     </div>

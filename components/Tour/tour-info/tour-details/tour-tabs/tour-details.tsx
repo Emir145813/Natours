@@ -1,15 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import SummaryTab from "./summary";
-import { ITour } from "@/components/interfaces";
 import Itinerary from "./itinerary";
 import Guides from "./guides";
 import Bookingcard from "@/components/booking-card";
 import Reviews from "./reviews";
-
-interface ITourDetails {
-  tour: ITour;
-}
+import { ITourDetails } from "@/components/interfaces";
 
 function TourDetails({ tour }: ITourDetails) {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -42,12 +38,9 @@ function TourDetails({ tour }: ITourDetails) {
     case "Guides":
       tabContent = <Guides guides={tour.guides} />;
       break;
-    case "Reviews" :
-      tabContent = <Reviews reviews={tour.reviews}/>
+    case "Reviews":
+      tabContent = <Reviews tourId={tour._id} />;
   }
-
-  console.log(tour);
-  
 
   return (
     <div className="mt-10 space-y-8">
