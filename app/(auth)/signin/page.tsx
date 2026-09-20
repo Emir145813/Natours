@@ -2,7 +2,6 @@
 import RegisterLayout from "@/components/register-layout";
 import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -15,27 +14,34 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import AppButton from "@/components/ui/app-buttom";
 import Link from "next/link";
-
-const signinSchema = z.object({
-  email: z.email(),
-  password: z
-    .string()
-    .min(8, "Password  must be at least 8 characters")
-    .max(16, "Password  must be at most 16 characters"),
-});
+import { useMutation } from "@tanstack/react-query";
+import { loginUser } from "@/app/services/users.services";
+import { useRouter } from "next/navigation";
+import { signinSchema } from "@/lib/schemas/signinShcema";
 
 function SignIn() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const form = useForm<z.infer<typeof signinSchema>>({
     resolver: zodResolver(signinSchema),
-    mode: "onChange",
+    mode: "onSubmit",
     defaultValues: {
       email: "",
       password: "",
     },
   });
-  function onSubmit(data: z.infer<typeof signinSchema>) {
-    console.log(data);
+
+  const { mutate, data, error, isPending, isSuccess } = useMutation({
+    mutationFn: loginUser,
+    onSuccess: () => {
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
+    },
+  });
+
+  function onSubmit(data: { email: string; password: string }) {
+    mutate(data);
   }
 
   const showPasswordHandler = () => {
@@ -64,7 +70,7 @@ function SignIn() {
                       type="text"
                       placeholder="Enter your Email"
                       aria-invalid={fieldState.invalid}
-                      className="pl-7"
+                      className="pl-7 rounded-full"
                     />
                     <Icon
                       icon="mdi:email"
@@ -93,7 +99,7 @@ function SignIn() {
                       type={showPassword === true ? "text" : "password"}
                       placeholder="Enter your password"
                       aria-invalid={fieldState.invalid}
-                      className="pl-7"
+                      className="pl-7 rounded-full"
                     />
                     <Icon
                       icon="solar:eye-bold"
@@ -115,12 +121,26 @@ function SignIn() {
               )}
             />
           </FieldGroup>
+          {isSuccess && (
+            <span className="bg-secondary/10 text-secondary font-medium text-sm block py-2 px-3 rounded-full mb-4">
+              Wellcome back! You have successfully logged in.
+            </span>
+          )}
+          {error && (
+            <span className="bg-destructive/10 text-destructive font-medium text-sm block py-2 px-3 rounded-full mb-4">
+              {error?.message}
+            </span>
+          )}
           <div className="flex items-center justify-between text-primary text-sm font-medium mb-5 ">
             <Link href="/signup">Dont have account?</Link>
             <Link href="forget-password">Forget Password?</Link>
           </div>
-          <AppButton type="submit" className="w-full rounded-xl py-5">
-            Sign in
+          <AppButton type="submit" className="w-full rounded-full py-5">
+            {isPending ? (
+              <Icon icon="eos-icons:loading" className="text-background" />
+            ) : (
+              "Sign in"
+            )}
           </AppButton>
         </form>
       </div>
