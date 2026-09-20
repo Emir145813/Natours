@@ -10,10 +10,15 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+<<<<<<< HEAD
     "@hookform/resolvers": "^5.7.1",
     "@tanstack/react-query": "^5.102.8",
     "@tanstack/react-query-devtools": "^5.102.8",
     "axios": "^1.20.0",
+=======
+    "@tanstack/react-query": "^5.101.4",
+    "@tanstack/react-query-devtools": "^5.101.4",
+>>>>>>> 4eba1972f8313f9926e58bc572ebf3674d4a383c
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "iconify": "^1.4.0",

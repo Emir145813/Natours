@@ -17,9 +17,9 @@ const inter = Inter({
   variable: "--font-inter-regular",
   subsets: ["latin"],
 });
-const kameron = Kameron({
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  variable: "--font-kameron-regular",
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -50,7 +50,6 @@ export default function RootLayout({
         playwrite.variable,
         inter.variable,
         plusJakartaSans.variable,
-        kameron.variable,
       )}
     >
       <body className={`antialiased`}>
