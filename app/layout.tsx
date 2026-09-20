@@ -4,7 +4,6 @@ import {
   Plus_Jakarta_Sans,
   Geist,
   Playwrite_AU_NSW,
-  Kameron,
 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -17,11 +16,6 @@ const inter = Inter({
   variable: "--font-inter-regular",
   subsets: ["latin"],
 });
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-});
-
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
