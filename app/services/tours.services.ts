@@ -1,5 +1,5 @@
 import { ITour, ItourResponse } from "@/components/interfaces";
-import api from "@/lib/axion";
+import {api} from "@/lib/axion";
 
 export async function getTours(page: number ,limit : number , sort : string , search : string): Promise<ItourResponse> {
   const result = await api.get("/tours",{
