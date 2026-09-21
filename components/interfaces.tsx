@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+import { Button } from "./ui/button";
 export interface IUser {
   _id: string
   name: string
@@ -8,8 +8,6 @@ export interface IUser {
   role: string
   __v: number
 }
-=======
-import { Button } from "./ui/button";
 
 export interface IChildren {
   children: React.ReactNode;
@@ -210,4 +208,3 @@ export interface IUseGetTours{
   nextPage : number | undefined,
   search : string
 }
->>>>>>> 001-home-page
