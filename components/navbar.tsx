@@ -67,12 +67,14 @@ function NavBar() {
           <div className="flex justify-end items-center gap-2">
             <div className="flex gap-2">
               <IconWrapper
+              className="hover:bg-third"
                 fill="third"
                 icon="akar-icons:search"
                 onClickHandler={searchSwitchHandler}
               />
               <Link href="cart">
                 <IconWrapper
+                className="hover:bg-third"
                   fill="third"
                   icon="akar-icons:cart"
                   onClickHandler={searchSwitchHandler}
@@ -80,7 +82,7 @@ function NavBar() {
               </Link>
             </div>
             <Link
-              href="/login"
+              href="/signin"
               className="hover:bg-third border-2 border-third rounded-full flex flex-row-reverse items-center gap-2 pl-4 transition-all duration-300 group"
             >
               <div className="p-2 rounded-full bg-third">
@@ -101,8 +103,8 @@ function NavBar() {
       >
         <div className="flex justify-center items-center gap-2 w-1/4">
           <IconWrapper
-            className="bg-card"
-            fill="destructive"
+            className="bg-card hover:bg-error"
+            fill="error"
             icon="ci:close-md"
             onClickHandler={searchCloseHandler}
           />
@@ -113,7 +115,7 @@ function NavBar() {
             onChange={(e) => setSearch(e.target.value)}
           />
           <IconWrapper
-            className="bg-card"
+            className="bg-card hover:bg-third"
             fill="third"
             icon="akar-icons:search"
             onClickHandler={() => searchHandler(search)}

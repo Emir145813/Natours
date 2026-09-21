@@ -8,7 +8,7 @@ function IconWrapper({ icon, onClickHandler, fill, className }: IIConWrapper) {
     <div
       onClick={onClickHandler}
       className={cn(
-        `hover:bg-${fill} p-2 rounded-full group transition-all duration-300 border`,
+        `p-2 rounded-full group transition-all duration-300 border`,
         className,
       )}
     >

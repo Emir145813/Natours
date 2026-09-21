@@ -208,3 +208,18 @@ export interface IUseGetTours{
   nextPage : number | undefined,
   search : string
 }
+
+export interface ISignup {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+export interface ResetData {
+  password: string;
+  confirmPassword: string;
+}
+export interface IResetPassword {
+  resetToken: string;
+  data: ResetData;
+}

@@ -1,5 +1,5 @@
 import { IReview, IreviewResponse } from "@/components/interfaces";
-import api from "@/lib/axion";
+import {api} from "@/lib/axion";
 
 export async function getReviews(
   tourId: string,

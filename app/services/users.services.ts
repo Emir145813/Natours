@@ -1,20 +1,5 @@
-import { IUser } from "@/components/interfaces";
+import { ISignup, IUser } from "@/components/interfaces";
 import { api } from "@/lib/axion";
-
-export interface ISignup {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
-interface ResetData {
-  password: string;
-  confirmPassword: string;
-}
-interface IResetPassword {
-  resetToken: string;
-  data: ResetData;
-}
 
 export async function loginUser(data: { email: string; password: string }) {
   const result = await api.post("/users/login", data);
