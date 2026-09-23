@@ -3,6 +3,7 @@ import React from "react";
 import Container from "../container";
 import { Icon } from "@iconify/react";
 import ToursCarousel from "./tours-carousel";
+import Link from "next/link";
 
 function ToursShowCase() {
   return (
@@ -13,10 +14,10 @@ function ToursShowCase() {
             <span className="font-bold text-primary text-3xl">
               Featured Tours
             </span>
-            <div className="flex justify-between items-center gap-1 transition-all duration-300 hover:gap-2 hover:text-primary ">
+            <Link href="/tours" className="flex justify-between items-center gap-1 transition-all duration-300 hover:gap-2 hover:text-primary ">
               <span className="font-medium">View All Tours</span>
               <Icon icon="mingcute:right-fill" className="" />
-            </div>
+            </Link>
           </div>
           <div className="h-full">
             <ToursCarousel />

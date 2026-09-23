@@ -15,10 +15,10 @@ function Itinerary({ locations }: IItineraryProps) {
           className="flex items-center gap-8  before:absolute before:left-7.5 before:top-0 before:h-full before:w-0.5 before:bg-primary"
         >
           <div className="flex flex-col items-center justify-center h-15 w-15 rounded-full bg-primary z-10">
-            <span className="font-medium text-xl text-background">
+            <span className="font-medium text-xl text-white">
               {location.day}
             </span>
-            <span className="font-medium text-background/60 text-sm">Day</span>
+            <span className="font-medium text-white/60 text-sm">Day</span>
           </div>
           <Icon
             icon="solar:arrow-right-broken"

@@ -2,7 +2,6 @@
 import Container from "./container";
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
 import NavLinks from "./navLinks";
 import React, { useEffect, useState } from "react";
 import { Input } from "./ui/input";
@@ -11,6 +10,12 @@ import { useSearchTour } from "@/hooks/get-tour";
 import { ProductCardCompact } from "./ui/product-card";
 import { usePathname } from "next/navigation";
 import IconWrapper from "./ui/icon-wrapper";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { getMe, SignOutUser } from "@/app/services/users.services";
+
+import UserDropDown from "./ui/user-drop-down";
+import NavLogo from "./ui/nav-logo";
+import SystemTheme from "./ui/system-theme";
 
 function NavBar() {
   const { setQueryParams } = useQueryParams();
@@ -39,62 +44,52 @@ function NavBar() {
   };
 
   const { data: tours } = useSearchTour(search, 5);
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
+  const { data: userData, isLoading } = useQuery({
+    queryKey: ["user"],
+    queryFn: getMe,
+  });
+
+  const { mutate } = useMutation({
+    mutationFn: SignOutUser,
+    onSuccess: () => {
+      queryClient.removeQueries({ queryKey: ["user"] });
+    },
+  });
+
   return (
     <div className="w-full pt-4 z-50 fixed">
       <Container>
-        <div className="bg-background/70 p-2 backdrop-blur-md rounded-full shadow-soft grid grid-cols-3 items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center justify-start gap-2 cursor-pointer w-fit"
-          >
-            <Image
-              src="/images/logo-nav.png"
-              alt="Natours"
-              width={50}
-              height={50}
-              className="rounded-full border-2 border-third"
-            />
-            <span className="text-third font-bold text-lg">NATOURS</span>
-          </Link>
-          <div className="flex justify-center">
-            <NavLinks />
-          </div>
+        <div className="bg-card/80 p-2 backdrop-blur-md rounded-full shadow-soft grid grid-cols-3 items-center justify-between">
+          <NavLogo />
+          <NavLinks />
           <div className="flex justify-end items-center gap-2">
-            <div className="flex gap-2">
+            <div className="flex gap-1">
+              <SystemTheme />
               <IconWrapper
-              className="hover:bg-third"
+                className="hover:bg-third"
                 fill="third"
                 icon="akar-icons:search"
                 onClickHandler={searchSwitchHandler}
               />
               <Link href="cart">
                 <IconWrapper
-                className="hover:bg-third"
+                  className="hover:bg-third"
                   fill="third"
                   icon="akar-icons:cart"
-                  onClickHandler={searchSwitchHandler}
                 />
               </Link>
             </div>
-            <Link
-              href="/signin"
-              className="hover:bg-third border-2 border-third rounded-full flex flex-row-reverse items-center gap-2 pl-4 transition-all duration-300 group"
-            >
-              <div className="p-2 rounded-full bg-third">
-                <Icon
-                  className="text-background text-2xl"
-                  icon="griddy-icons:user-filled"
-                />
-              </div>
-              <span className="text-third font-bold group-hover:text-background transition-all duration-300">
-                Sign up
-              </span>
-            </Link>
+            <UserDropDown
+              props={userData}
+              logout={() => mutate()}
+              isLoading={isLoading}
+            />
           </div>
         </div>
       </Container>
@@ -110,7 +105,7 @@ function NavBar() {
           />
           <Input
             placeholder="Search Tour"
-            className=" bg-card rounded-full p-5"
+            className="bg-card rounded-full p-5"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

@@ -11,12 +11,12 @@ function AppButton({ className, ...props }: AppButtonProps) {
   if (props.href) {
     return (
       <Link href={props.href} className="w-fit">
-        <Button className={cn("rounded-full p-6", className)} {...props} />
+        <Button className={cn("rounded-full p-6 text-white", className)} {...props} />
       </Link>
     );
   }
 
-  return <Button className={cn("rounded-full p-6", className)} {...props} />;
+  return <Button className={cn("rounded-full p-6 text-white", className)} {...props} />;
 }
 
 export default AppButton;

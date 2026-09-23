@@ -6,16 +6,18 @@ function Banner() {
   return (
     <div>
       <Container>
-        <div className="bg-[url('/images/banner.png')] bg-cover bg-bottom shadow-soft rounded-4xl p-10 ">
-          <div className="flex flex-col gap-1">
-            <h1 className="font-bold text-3xl text-primary font-kameron">
-              Ready For Your Next Adventure ?
-            </h1>
-            <p className="font-semibold text-black/50 text-xl">
-              Lets make your dream trip reality.
-            </p>
+        <div className="min-h-48 bg-[url('/images/banner.png')] bg-cover bg-bottom shadow-soft rounded-4xl">
+          <div className=" bg-radial-[at_0%_0%] from-background/20 to-60%  p-10">
+            <div className="flex flex-col gap-1">
+              <h1 className="font-bold text-3xl text-primary font-kameron">
+                Ready For Your Next Adventure ?
+              </h1>
+              <p className="font-semibold text-black/50 text-xl">
+                Lets make your dream trip reality.
+              </p>
+            </div>
+            <AppButton className="mt-6" href="/tours">Explore Tours</AppButton>
           </div>
-          <AppButton className="mt-6">Explore Tours</AppButton>
         </div>
       </Container>
     </div>

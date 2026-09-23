@@ -14,7 +14,7 @@ function IconWrapper({ icon, onClickHandler, fill, className }: IIConWrapper) {
     >
       <Icon
         icon={icon}
-        className={`text-2xl text-${fill} group-hover:text-card transition-all duration-300`}
+        className={`text-2xl text-foreground group-hover:text-white transition-all duration-300`}
       />
     </div>
   );

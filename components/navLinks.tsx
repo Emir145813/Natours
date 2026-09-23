@@ -26,17 +26,19 @@ function NavLinks() {
   const pathName = usePathname();
 
   return (
-    <ul className="flex gap-8">
-      {navLinks.map((item) => (
-        <Link href={item.href} key={item.title}>
-          <li
-            className={`font-medium ${pathName === item.href ? "text-third" : "text-foreground"} hover:text-third transition-all duration-300`}
-          >
-            {item.title}
-          </li>
-        </Link>
-      ))}
-    </ul>
+    <div className="flex justify-center">
+      <ul className="flex gap-8">
+        {navLinks.map((item) => (
+          <Link href={item.href} key={item.title}>
+            <li
+              className={`font-medium ${pathName === item.href ? "text-third" : "text-foreground"} hover:text-third transition-all duration-300`}
+            >
+              {item.title}
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </div>
   );
 }
 

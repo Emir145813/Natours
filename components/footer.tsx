@@ -111,7 +111,7 @@ function Footer() {
         <div className="pb-10 flex space-x-20">
           <div className=" max-w-1/3 space-y-6">
             <Image src="/images/logo.png" alt="Logo" width={100} height={100} />
-            <p className="font-medium text-black/50">
+            <p className="font-medium text-foreground/50">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Laudantium ipsa nam illum, ratione architecto excepturi. Earum
               suscipit, qui nisi illo ex id sint atque mollitia, impedit
@@ -146,7 +146,7 @@ function Footer() {
                   {section.links.map((item) => (
                     <Link
                       key={item.title}
-                      className="text-black/50 font-medium text-sm hover:text-primary"
+                      className="text-foreground/50 font-medium text-sm hover:text-primary"
                       href={item.href}
                     >
                       <li className="">{item.title}</li>
@@ -157,8 +157,8 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className="border-t border-black/10 py-1">
-          <div className="font-medium text-black/50 text-center flex justify-between">
+        <div className="border-t border-foreground/10 py-1">
+          <div className="font-medium text-foreground/50 text-center flex justify-between">
             <p>© {new Date().getFullYear()} All Rights Reserved</p>
             <div className="flex items-center gap-2">
               <span>Made With</span>

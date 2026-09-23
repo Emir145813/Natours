@@ -15,7 +15,7 @@ import z from "zod";
 import AppButton from "@/components/ui/app-buttom";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
-import { loginUser } from "@/app/services/users.services";
+import { SignInUser } from "@/app/services/users.services";
 import { useRouter } from "next/navigation";
 import { signinSchema } from "@/lib/schemas/signinShcema";
 
@@ -32,7 +32,7 @@ function SignIn() {
   });
 
   const { mutate, data, error, isPending, isSuccess } = useMutation({
-    mutationFn: loginUser,
+    mutationFn: SignInUser,
     onSuccess: () => {
       setTimeout(() => {
         router.push("/");

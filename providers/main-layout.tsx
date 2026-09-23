@@ -4,6 +4,7 @@ import TanstackProvider from "./tanstack-provider";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { usePathname } from "next/navigation";
+import ThemeProvider from "./theme-provider";
 
 function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -19,9 +20,16 @@ function MainLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <TanstackProvider>
-      <NavBar />
-      {children}
-      <Footer />
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <NavBar />
+        {children}
+        <Footer />
+      </ThemeProvider>
     </TanstackProvider>
   );
 }
