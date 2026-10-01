@@ -1,7 +1,7 @@
 "use client";
 import { getReviews } from "@/app/services/reviews.services";
 import { Button } from "@/components/ui/button";
-import LoadingIndicator from "@/components/ui/loading-indicator";
+import {LoadingIndicator} from "@/components/ui/loading-indicator";
 import { Icon } from "@iconify/react";
 import { keepPreviousData, useInfiniteQuery } from "@tanstack/react-query";
 import Image from "next/image";

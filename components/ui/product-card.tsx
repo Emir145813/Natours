@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import React from "react";
-import { TourCard } from "../interfaces";
+import { ICartItem, ICartTour, TourCard } from "../interfaces";
 import Link from "next/link";
 import Image from "next/image";
 import { Skeleton } from "./skeleton";
@@ -127,5 +127,87 @@ export function ProductCardCompact({ props }: TourCard) {
         </div>
       </div>
     </Link>
+  );
+}
+
+export function ProductCardCart({props,decreaseItem ,increaseItem ,removeItem} : ICartTour) {
+  return (
+    <div className="bg-background rounded-2xl border p-6 flex gap-8 items-center justify-between">
+      <div className="flex justify-center items-center gap-8">
+        <div className="w-52 h-40 bg-gray-800 rounded-2xl overflow-hidden">
+          <Image
+            src={props.imageCover}
+            alt="tour-cover"
+            width={208}
+            height={160}
+            className="scale-150"
+          />
+        </div>
+        <div className="flex">
+          <div className="space-y-4 flex flex-col">
+            <span className="text-primary font-medium">{props.name}</span>
+            <span>{props.startLocation.description}</span>
+            <div className="flex gap-4">
+              <div className="flex items-center gap-1">
+                <span>
+                  <Icon
+                    width={18}
+                    icon="mingcute:time-duration-line"
+                    className="text-ring"
+                  />
+                </span>
+                <span className="text-lg">{props.duration} days</span>
+              </div>
+              <div className="flex justify-center items-center gap-1">
+                <span>
+                  <Icon
+                    width={18}
+                    icon="material-symbols:star-rounded"
+                    className="text-accent"
+                  />
+                </span>
+                <span className="text-lg">
+                  {props.ratingsAverage} <span className="opacity-50 text-base">({props.ratingsQuantity})</span>
+                </span>
+              </div>
+              <div className="flex justify-center items-center gap-1">
+                <span>
+                  <Icon width={18} icon="bi:people" className="text-ring" />
+                </span>
+                <span className="text-lg">{props.maxGroupSize} Person</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex gap-8 items-center">
+        <div className="flex flex-col justify-startitems-center">
+          <div className="flex items-center">
+            <Icon width={24} icon="boxicons:dollar" className="text-primary" />
+            <span className="text-2xl text-primary">{props.price.toLocaleString()}</span>
+          </div>
+          <span className="ml-2 text-foreground/50">Per Person</span>
+        </div>
+        <div>
+          <div className="h-full flex flex-col justify-center items-center gap-4">
+            <div className="flex flex-row-reverse justify-center items-center bg-card rounded-full p-2 gap-4 border">
+              <span onClick={increaseItem} className="p-2 hover:bg-primary hover:text-white rounded-full transition-colors duration-300">
+                <Icon icon="akar-icons:plus" />
+              </span>
+              <span>{props.quantity}</span>
+              <span onClick={decreaseItem} className="p-2 hover:bg-error hover:text-white rounded-full transition-colors duration-300">
+                <Icon icon="akar-icons:minus" />
+              </span>
+            </div>
+            <div className="flex justify-between items-center cursor-pointer">
+              <div className="flex justify-center items-center gap-1 hover:text-error transition-all duration-300">
+                <Icon icon="fluent:delete-16-regular" className=" text-xl" />
+                <span onClick={removeItem}>Clear Tour</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

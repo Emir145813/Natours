@@ -1,12 +1,12 @@
 import { Button } from "./ui/button";
 export interface IUser {
-  _id: string
-  name: string
-  email: string
-  avatar: string
-  password: string
-  role: string
-  __v: number
+  _id: string;
+  name: string;
+  email: string;
+  avatar: string;
+  password: string;
+  role: string;
+  __v: number;
 }
 
 export interface IChildren {
@@ -176,11 +176,11 @@ export type AppButtonProps = React.ComponentProps<typeof Button> & {
   href?: string;
 };
 
-export interface IIConWrapper{
-  className ?: string
-  fill : string
-  icon : string
-  onClickHandler ?: ()=> void
+export interface IIConWrapper {
+  className?: string;
+  fill: string;
+  icon: string;
+  onClickHandler?: () => void;
 }
 
 export interface TourCard {
@@ -188,7 +188,7 @@ export interface TourCard {
 }
 
 export interface ITourProps {
-  tourInfo?: ITour;
+  tourInfo: ITour;
 }
 
 export interface IError {
@@ -200,13 +200,13 @@ export interface IReviewCard {
   props: IReview;
 }
 
-export interface IUseGetTours{
-  page : number,
-  limit : number,
-  sort : string,
-  prevPage : number | undefined,
-  nextPage : number | undefined,
-  search : string
+export interface IUseGetTours {
+  page: number;
+  limit: number;
+  sort: string;
+  prevPage: number | undefined;
+  nextPage: number | undefined;
+  search: string;
 }
 
 export interface ISignup {
@@ -222,4 +222,15 @@ export interface ResetData {
 export interface IResetPassword {
   resetToken: string;
   data: ResetData;
+}
+
+export interface ICartItem extends ITour {
+  quantity: number;
+}
+
+export interface ICartTour {
+  decreaseItem: () => void;
+  increaseItem: () => void;
+  removeItem: () => void;
+  props: ICartItem;
 }
