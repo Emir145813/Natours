@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { ITourProps } from "./interfaces";
 import { Icon } from "@iconify/react";
-import { DatePickerInput } from "./ui/date-picker";
 import AppButton from "./ui/app-buttom";
+import { useCartStore } from "@/app/store/cart.store";
+import { LoadingIndicatorMinimal } from "./ui/loading-indicator";
 
 function Bookingcard({ tourInfo }: ITourProps) {
+  const addItem = useCartStore((state) => state.addItem);
+  const [addToCart, setAddToCart] = useState(false);
+  const handleAddToCart = () => {
+    setAddToCart(true);
+    setTimeout(() => {
+      addItem(tourInfo);
+      setAddToCart(false);
+    }, 1000);
+  };
+
   const benefitsList = [
     {
       title: "Free cancelation upto 20 hours",
@@ -66,8 +77,14 @@ function Bookingcard({ tourInfo }: ITourProps) {
           </span>
         </div>
       </div>
-      <DatePickerInput />
-      <AppButton className="w-full rounded-xl">Book Tour</AppButton>
+      {/* Todo : Add tour according to the date */}
+      <AppButton
+        disabled={addToCart}
+        className="w-full rounded-full"
+        onClick={handleAddToCart}
+      >
+        {addToCart ? <LoadingIndicatorMinimal /> : "Book tour"}
+      </AppButton>
       <div>
         <span className="mb-2 block font-medium">Why book with us ?</span>
         <ul className="space-y-2">

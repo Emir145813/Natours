@@ -155,7 +155,7 @@
 } 
 
 .soft-transition {
-  animation : enter-animation 300ms ease-out;
+  animation : enter-animation 100ms ease-out;
 }
 
 .swiper-button-disabled{

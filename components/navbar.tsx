@@ -16,8 +16,10 @@ import { getMe, SignOutUser } from "@/app/services/users.services";
 import UserDropDown from "./ui/user-drop-down";
 import NavLogo from "./ui/nav-logo";
 import SystemTheme from "./ui/system-theme";
+import { totalQuantityCount, useCartStore } from "@/app/store/cart.store";
 
 function NavBar() {
+  const totalQuantity = useCartStore(totalQuantityCount);
   const { setQueryParams } = useQueryParams();
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
@@ -77,12 +79,17 @@ function NavBar() {
                 icon="akar-icons:search"
                 onClickHandler={searchSwitchHandler}
               />
-              <Link href="cart">
+              <Link href="/cart" className="flex relative">
                 <IconWrapper
                   className="hover:bg-third"
                   fill="third"
                   icon="akar-icons:cart"
                 />
+                <span
+                  className={`bg-primary absolute -top-1 -right-1 rounded-full text-[10px] min-w-5 h-5 flex justify-center items-center text-white ${totalQuantity === 0 ? "hidden" : ""}`}
+                >
+                  {totalQuantity}
+                </span>
               </Link>
             </div>
             <UserDropDown
@@ -94,7 +101,7 @@ function NavBar() {
         </div>
       </Container>
       <div
-        className={`w-full min-h-screen flex flex-col items-center gap-2 bg-background/20 backdrop-blur-sm fixed top-0 pt-7 ${isOpen ? "" : "hidden"}`}
+        className={`w-full min-h-screen flex flex-col items-center gap-2 bg-background/20 backdrop-blur-sm fixed top-0 pt-7 soft-transition ${isOpen ? "" : "hidden"}`}
       >
         <div className="flex justify-center items-center gap-2 w-1/4">
           <IconWrapper
