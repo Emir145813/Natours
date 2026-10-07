@@ -34,10 +34,27 @@ function ToursCarousel() {
         <Swiper
           modules={[Navigation, A11y]}
           spaceBetween={0}
-          slidesPerView={6}
+          slidesPerView="auto"
           navigation={{
             nextEl: ".next-btn",
             prevEl: ".prev-btn",
+          }}
+          breakpoints={{
+            402: {
+              slidesPerView: "auto",
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+            1920: {
+              slidesPerView: 6,
+            },
+            2560: {
+              slidesPerView: 8,
+            },
           }}
         >
           {isLoading

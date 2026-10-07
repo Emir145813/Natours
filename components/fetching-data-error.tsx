@@ -7,9 +7,9 @@ export function FetchingError({ error, refetch }: IError) {
   return (
     <div className="h-screen flex justify-center items-center">
       <div className="gap-4 flex flex-col justify-center items-center text-center">
-        <Image src={"/images/error.png"} alt="404" width={400} height={400} />
+        <Image src={"/images/error.png"} alt="404" width={300} height={300} />
         <div className="flex flex-col gap-2">
-          <span className="text-4xl font-black text-primary">
+          <span className="text-xl sm:text-4xl font-black text-primary">
             {error.message}
           </span>
         </div>

@@ -5,7 +5,7 @@ import AppButton from "./ui/app-buttom";
 import { useCartStore } from "@/app/store/cart.store";
 import { LoadingIndicatorMinimal } from "./ui/loading-indicator";
 
-function Bookingcard({ tourInfo }: ITourProps) {
+export function Bookingcard({ tourInfo }: ITourProps) {
   const addItem = useCartStore((state) => state.addItem);
   const [addToCart, setAddToCart] = useState(false);
   const handleAddToCart = () => {
@@ -35,7 +35,7 @@ function Bookingcard({ tourInfo }: ITourProps) {
   ];
 
   return (
-    <div className="bg-card p-4 space-y-4 rounded-xl w-full shadow-soft">
+    <div className="bg-card p-4 space-y-4 rounded-xl w-full shadow-soft hidden sm:block">
       <div className="flex items-center justify-between">
         <span className="text-primary text-xl font-semibold">Tour Summary</span>
         <Icon
@@ -105,4 +105,29 @@ function Bookingcard({ tourInfo }: ITourProps) {
   );
 }
 
-export default Bookingcard;
+export function BookingcardMobile({ tourInfo }: ITourProps) {
+  const addItem = useCartStore((state) => state.addItem);
+  const [addToCart, setAddToCart] = useState(false);
+  const handleAddToCart = () => {
+    setAddToCart(true);
+    setTimeout(() => {
+      addItem(tourInfo);
+      setAddToCart(false);
+    }, 1000);
+  };
+  return (
+    <div className="bg-card p-4 rounded-t-3xl border w-screen sm:hidden">
+      <div>
+        
+      </div>
+      <AppButton
+        disabled={addToCart}
+        className="w-full rounded-full"
+        onClick={handleAddToCart}
+      >
+        {addToCart ? <LoadingIndicatorMinimal /> : "Book tour"}
+      </AppButton>
+      <div></div>
+    </div>
+  );
+}

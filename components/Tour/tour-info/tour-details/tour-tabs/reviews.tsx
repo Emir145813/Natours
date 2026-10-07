@@ -29,7 +29,7 @@ function Reviews({ tourId }: { tourId: string }) {
         page.data.doc?.map((review, index) => (
           <div
             key={index}
-            className="flex flex-col gap-2 p-4 bg-card rounded-xl shadow-soft soft-transition"
+            className="w-full flex flex-col gap-2 p-4 bg-card rounded-xl shadow-soft soft-transition"
           >
             <div className="flex gap-2 items-center">
               <Image
@@ -51,7 +51,7 @@ function Reviews({ tourId }: { tourId: string }) {
                 </div>
               </div>
             </div>
-            <span>{review.review}</span>
+            <span className="text-foreground/50">{review.review}</span>
           </div>
         )),
       )}
@@ -60,7 +60,7 @@ function Reviews({ tourId }: { tourId: string }) {
           <LoadingIndicator />
         ) : hasNextPage ? (
           <Button
-            className="p-6 bg-primary rounded-full"
+            className="p-6 bg-primary rounded-full text-white"
             onClick={() => fetchNextPage()}
           >
             Load More

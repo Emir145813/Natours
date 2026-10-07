@@ -6,10 +6,12 @@ function NotFound() {
   return (
     <div className="h-screen flex justify-center items-center">
       <div className="text-center space-y-4">
-        <Image src={"/images/404.png"} alt="404" width={400} height={400} />
+        <Image src={"/images/404.png"} alt="404" width={300} height={300} />
         <div className="flex flex-col gap-2">
-          <span className="text-9xl font-black text-primary">404</span>
-          <span className="text-2xl text-foreground font-semibold">
+          <span className="text-5xl sm:text-9xl font-black text-primary">
+            404
+          </span>
+          <span className="text-xl sm:text-2xl text-foreground font-semibold">
             Opps! Are you lost ?
           </span>
         </div>

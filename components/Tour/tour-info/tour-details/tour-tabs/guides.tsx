@@ -4,7 +4,7 @@ import React from "react";
 
 function Guides({ guides }: IGuidesProps) {
   return (
-    <div className="grid grid-cols-4">
+    <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-4 gap-8 sm:gap-4 pb-2">
       {guides?.map((guide, index) => (
         <div key={index} className="flex items-center gap-4 soft-transition">
           <Image

@@ -29,11 +29,11 @@ function Features() {
   return (
     <div>
       <Container>
-        <div className="w-full py-5 px-20 flex justify-between items-center rounded-4xl bg-card/80 -mt-23 backdrop-blur-md shadow-soft">
+        <div className="w-full p-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-12 justify-between items-center rounded-4xl bg-card/80 -mt-23 backdrop-blur-md shadow-soft">
           {featuresData.map((item) => (
             <div key={item.title}>
               <div className="flex flex-col justify-center items-center gap-6">
-                <Icon icon={item.icon} className="text-primary text-6xl"/>
+                <Icon icon={item.icon} className="text-primary text-6xl" />
                 <div className="flex flex-col justify-center items-center gap-1">
                   <span className="font-medium">{item.title}</span>
                   <p className="text-foreground/50">{item.desc}</p>

@@ -15,7 +15,7 @@ function NavLogo() {
         height={50}
         className="rounded-full  border-2 border-third"
       />
-      <span className="text-third font-bold text-lg">NATOURS</span>
+      <span className="text-third font-bold text-lg hidden sm:block">NATOURS</span>
     </Link>
   );
 }

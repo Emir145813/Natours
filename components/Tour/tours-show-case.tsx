@@ -11,10 +11,10 @@ function ToursShowCase() {
       <Container>
         <div className="bg-card border p-6 rounded-4xl w-full flex flex-col gap-8">
           <div className="flex justify-between items-center">
-            <span className="font-bold text-primary text-3xl">
+            <span className="font-bold text-primary text-2xl md:text-3xl">
               Featured Tours
             </span>
-            <Link href="/tours" className="flex justify-between items-center gap-1 transition-all duration-300 hover:gap-2 hover:text-primary ">
+            <Link href="/tours" className="flex justify-between items-center gap-1 transition-all duration-300 hover:gap-2 hover:text-primary text-xs md:text-xl">
               <span className="font-medium">View All Tours</span>
               <Icon icon="mingcute:right-fill" className="" />
             </Link>
