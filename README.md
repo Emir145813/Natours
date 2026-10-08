@@ -8,6 +8,10 @@ The frontend communicates with a separate RESTful backend for authentication, to
 
 ---
 
+## 📸 Preview
+
+![Natours Preview](./public/images/readme/preview.png)
+
 ## ✨ Features
 
 ### 🔐 Authentication
