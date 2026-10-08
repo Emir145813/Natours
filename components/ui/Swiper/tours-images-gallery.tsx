@@ -25,7 +25,7 @@ function ImageGallery({ images }: IProps) {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute w-full top-1/2 flex justify-between px-4 z-20">
+      <div className="absolute w-full top-1/2 -translate-y-1/2 flex justify-between px-4 z-20">
         <button className={`prev-btn`}>
           <SlideLeft />
         </button>

@@ -52,7 +52,7 @@ function Cart() {
                 </div>
               </div>
               <hr className="my-3" />
-              <div className="h-full grid grid-cols-4 gap-4">
+              <div className="h-full sm:grid grid-cols-4 gap-4">
                 <div className="col-span-3 flex flex-col gap-2">
                   {items.map((item) => (
                     <ProductCardCart
@@ -64,13 +64,13 @@ function Cart() {
                     />
                   ))}
                 </div>
-                <div className="h-fit bg-background rounded-2xl border sticky top-32 p-4">
-                  <div className="flex items-center gap-1 text-lg">
+                <div className="w-full h-fit bg-background rounded-2xl border fixed bottom-0 left-0 sm:sticky sm:top-32  p-4">
+                  <div className=" items-center gap-1 hidden sm:flex">
                     <Icon icon="icon-park-outline:transaction-order" />
                     <span>Order Summary</span>
                   </div>
-                  <hr className="my-3" />
-                  <div className="flex justify-between items-center font-bold">
+                  <hr className="my-3 hidden sm:block" />
+                  <div className="flex justify-between items-center font-medium">
                     <span>Total ({totalQuantity} Travelers)</span>
                     <div className="flex items-center">
                       <Icon
@@ -78,18 +78,18 @@ function Cart() {
                         icon="boxicons:dollar"
                         className="text-primary"
                       />
-                      <span className="text-2xl text-primary">
+                      <span className="text-xl text-primary">
                         {totalPrice}
                       </span>
                     </div>
                   </div>
-                  <hr className="my-3" />
+                  <hr className="my-3 " />
                   <AppButton className="w-full">Proceed the checkout</AppButton>
-                  <span className="block text-center pt-3 text-foreground/50 text-sm">
+                  <span className="text-center pt-3 text-foreground/50 text-sm hidden sm:block">
                     Secure and encrypted payment
                   </span>
-                  <hr className="my-3" />
-                  <div className="bg-primary/10 px-4 py-3 rounded-2xl flex justify-center items-center gap-4">
+                  <hr className="my-3 hidden sm:block" />
+                  <div className="bg-primary/10 px-4 py-3 rounded-2xl  justify-center items-center gap-4 hidden sm:flex">
                     <Icon
                       icon="heroicons:receipt-refund"
                       className="text-5xl text-primary"

@@ -4,7 +4,7 @@ import { ITour, IToursParams } from "@/components/interfaces";
 import { useGetTours } from "@/hooks/get-tour";
 import { ProductCard, ProductCardSkeleton } from "@/components/ui/product-card";
 import ToursLimit from "@/components/Filtering/tours-limit";
-import ToursSort from "@/components/Filtering/tours-sort";
+import {TourSortMobile, ToursSort} from "@/components/Filtering/tours-sort";
 import ToursPagination from "@/components/Filtering/tours-pagination";
 import { FetchingError } from "@/components/fetching-data-error";
 
@@ -32,9 +32,10 @@ function ToursPage({
     <div className="pt-36 mb-20">
       <div className="flex gap-2">
         <ToursLimit limit={limit} />
-        <ToursSort sort={sort} />
+        <ToursSort sort={sort} className="hidden sm:block"/>
+        <TourSortMobile sort={sort} className="sm:hidden"/>
       </div>
-      <div className="grid grid-cols-6 gap-9 bg-background rounded-4xl border p-5 my-2">
+      <div className="grid md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-9 bg-background rounded-4xl border p-5 my-2">
         {isLoading
           ? Array.from({ length: 12 }).map((_, index) => (
               <ProductCardSkeleton key={index} />

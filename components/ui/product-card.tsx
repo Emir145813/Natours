@@ -9,7 +9,7 @@ export function ProductCard({ props }: TourCard) {
   return (
     <Link
       href={`tours/${props.slug}`}
-      className="h-80 w-60 bg-card rounded-xl shadow-soft flex flex-col items-center justify-between p-2 transition-color duration-300 hover:scale-101 hover:shadow-soft hover:shadow-primary/30"
+      className="h-80 min-w-60 bg-card rounded-xl shadow-soft flex flex-col items-center justify-between p-2 transition-color duration-300 hover:scale-101 hover:shadow-soft hover:shadow-primary/30"
     >
       <div className="h-1/2 w-full rounded-xl bg-gray-200 relative overflow-hidden">
         <Image
@@ -65,7 +65,7 @@ export function ProductCard({ props }: TourCard) {
 
 export function ProductCardSkeleton() {
   return (
-    <div className="h-80 w-60 bg-card rounded-xl shadow-soft flex flex-col items-center justify-between p-2 transition-color duration-300 hover:scale-101 hover:shadow-soft hover:shadow-primary/30">
+    <div className="h-80 min-w-60 bg-card rounded-xl shadow-soft flex flex-col items-center justify-between p-2 transition-color duration-300 hover:scale-101 hover:shadow-soft hover:shadow-primary/30">
       <Skeleton className="h-1/2 w-full rounded-xl" />
       <div className="w-full py-2 flex-1 flex flex-col justify-between">
         <Skeleton className="w-3/4 h-6 rounded-full" />
@@ -132,22 +132,22 @@ export function ProductCardCompact({ props }: TourCard) {
 
 export function ProductCardCart({props,decreaseItem ,increaseItem ,removeItem} : ICartTour) {
   return (
-    <div className="bg-background rounded-2xl border p-6 flex gap-8 items-center justify-between">
-      <div className="flex justify-center items-center gap-8">
-        <div className="w-52 h-40 bg-gray-800 rounded-2xl overflow-hidden">
+    <div className="bg-background rounded-2xl border p-6 flex flex-col sm:flex-row gap-8 items-center justify-between w-full">
+      <div className="flex flex-col sm:flex-row justify-start gap-8 w-full">
+        <div className="min-w-52 h-40 bg-background rounded-2xl overflow-hidden">
           <Image
             src={props.imageCover}
             alt="tour-cover"
             width={208}
             height={160}
-            className="scale-150"
+            className="scale-200"
           />
         </div>
-        <div className="flex">
+        <div className="flex items-center">
           <div className="space-y-4 flex flex-col">
-            <span className="text-primary font-medium">{props.name}</span>
+            <span className="text-primary font-medium text-2xl">{props.name}</span>
             <span>{props.startLocation.description}</span>
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-start">
               <div className="flex items-center gap-1">
                 <span>
                   <Icon
@@ -156,7 +156,7 @@ export function ProductCardCart({props,decreaseItem ,increaseItem ,removeItem} :
                     className="text-ring"
                   />
                 </span>
-                <span className="text-lg">{props.duration} days</span>
+                <span className="sm:text-lg">{props.duration} days</span>
               </div>
               <div className="flex justify-center items-center gap-1">
                 <span>
@@ -166,27 +166,27 @@ export function ProductCardCart({props,decreaseItem ,increaseItem ,removeItem} :
                     className="text-accent"
                   />
                 </span>
-                <span className="text-lg">
-                  {props.ratingsAverage} <span className="opacity-50 text-base">({props.ratingsQuantity})</span>
+                <span className="sm:text-lg">
+                  {props.ratingsAverage} <span className="opacity-50">({props.ratingsQuantity})</span>
                 </span>
               </div>
               <div className="flex justify-center items-center gap-1">
                 <span>
                   <Icon width={18} icon="bi:people" className="text-ring" />
                 </span>
-                <span className="text-lg">{props.maxGroupSize} Person</span>
+                <span className="sm:text-lg">{props.maxGroupSize} Person</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex gap-8 items-center">
+      <div className="w-full sm:w-fit flex flex-row sm:flex-col 2xl:flex-row gap-8 items-start sm:items-center sm:justify-center justify-between">
         <div className="flex flex-col justify-startitems-center">
-          <div className="flex items-center">
-            <Icon width={24} icon="boxicons:dollar" className="text-primary" />
-            <span className="text-2xl text-primary">{props.price.toLocaleString()}</span>
+          <div className="flex items-center text-3xl">
+            <Icon icon="boxicons:dollar" className="text-primary" />
+            <span className=" text-primary">{props.price.toLocaleString()}</span>
           </div>
-          <span className="ml-2 text-foreground/50">Per Person</span>
+          <span className="ml-2 text-foreground/50 text-sm">Per Person</span>
         </div>
         <div>
           <div className="h-full flex flex-col justify-center items-center gap-4">
