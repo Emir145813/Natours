@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import SummaryTab from "./summary";
 import Itinerary from "./itinerary";
 import Guides from "./guides";
-import Bookingcard from "@/components/booking-card";
+import {Bookingcard, BookingcardMobile} from "@/components/booking-card";
 import Reviews from "./reviews";
 import { ITourDetails } from "@/components/interfaces";
 
@@ -45,7 +45,7 @@ function TourDetails({ tour }: ITourDetails) {
   return (
     <div className="mt-10 space-y-8">
       <div
-        className={`flex items-center gap-4 text-xl text-foreground/50 font-medium `}
+        className={`flex items-center gap-4 sm:text-xl text-foreground/50 font-medium `}
       >
         {tabs.map((tab, index) => (
           <div
@@ -61,12 +61,15 @@ function TourDetails({ tour }: ITourDetails) {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-[1fr_360px] mb-10 items-stretch">
-        <div className="pr-10">{tabContent}</div>
+      <div className="grid sm:grid-cols-[1fr_360px] mb-10 items-stretch">
+        <div className="sm:pr-10">{tabContent}</div>
         <div>
-          <aside className=" sticky top-28">
+          <aside className="sticky top-28">
             <Bookingcard tourInfo={tour} />
           </aside>
+          <div className="fixed bottom-0 left-0">
+            <BookingcardMobile tourInfo={tour}/>
+          </div>
         </div>
       </div>
     </div>

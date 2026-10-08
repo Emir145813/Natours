@@ -33,7 +33,6 @@ function ForgetPass() {
 
   const onSubmit = (data: { email: string }) => {
     mutate(data);
-    console.log(email);
   };
 
   return (

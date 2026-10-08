@@ -12,7 +12,7 @@ function Itinerary({ locations }: IItineraryProps) {
       {locations?.map((location, index) => (
         <div
           key={index}
-          className="flex items-center gap-8  before:absolute before:left-7.5 before:top-0 before:h-full before:w-0.5 before:bg-primary"
+          className="flex items-center gap-4 sm:gap-8  before:absolute before:left-7.5 before:top-0 before:h-full before:w-0.5 before:bg-primary"
         >
           <div className="flex flex-col items-center justify-center h-15 w-15 rounded-full bg-primary z-10">
             <span className="font-medium text-xl text-white">
@@ -25,7 +25,7 @@ function Itinerary({ locations }: IItineraryProps) {
             className="text-3xl text-foreground"
           />
           <div className="flex items-center gap-2">
-            <span className="text-foreground/50 text-lg font-medium">
+            <span className="text-foreground/50 text-sm sm:text-lg font-medium">
               {location.destination.description}
             </span>
             <Link
@@ -34,7 +34,7 @@ function Itinerary({ locations }: IItineraryProps) {
             >
               <Icon
                 icon="boxicons:location-filled"
-                className="text-3xl text-primary"
+                className="text-sm sm:text-3xl text-primary"
               />
             </Link>
           </div>

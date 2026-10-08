@@ -22,7 +22,7 @@ function RecentReviews() {
     <div className="w-full">
       <Container>
         <div className="bg-card p-6 rounded-4xl border ">
-          <p className="font-bold text-primary text-3xl text-center mb-6">
+          <p className="font-bold text-primary text-2xl md:text-3xl text-center mb-6">
             Recently Added Reviews
           </p>
           <div className=" bg-background rounded-2xl border">
@@ -32,6 +32,20 @@ function RecentReviews() {
               spaceBetween={0}
               slidesPerView={4}
               pagination={{ clickable: true }}
+              breakpoints={{
+                402: {
+                  slidesPerView: "auto",
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+                1280: {
+                  slidesPerView: 4,
+                },
+                2560: {
+                  slidesPerView: 7,
+                },
+              }}
             >
               {isLoading
                 ? Array.from({ length: 10 }).map((_, index) => (

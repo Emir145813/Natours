@@ -60,7 +60,6 @@ function ResetPass() {
   });
 
   const onSubmit = (data: { password: string; confirmPassword: string }) => {
-    console.log(data);
     mutate({ resetToken, data });
   };
 

@@ -40,7 +40,7 @@ function RegisterLayout({ children, layout }: IChildren) {
   return (
     <div className="h-screen bg-[url('/images/register/register-bg.png')] bg-cover bg-right">
       <div className="bg-linear-to-b from-background/30 to-black/0 h-full flex flex-col items-center justify-center">
-        <div className="bg-card rounded-2xl border p-5 w-1/3 space-y-5">
+        <div className="bg-card rounded-2xl border p-5 w-[95%] sm:w-1/2 xl:w-1/3 space-y-5">
           <div className="flex items-center justify-between">
             <div className="flex flex-col leading-[130%]">
               <span className="text-2xl text-foreground/50 font-kameron font-bold leading-[120%]">

@@ -108,9 +108,16 @@ function Footer() {
   return (
     <div className="bg-background border-t pt-10">
       <Container>
-        <div className="pb-10 flex space-x-20">
-          <div className=" max-w-1/3 space-y-6">
-            <Image src="/images/logo.png" alt="Logo" width={100} height={100} />
+        <div className="pb-10 flex flex-col space-x-20 gap-10">
+          <div className=" xl:max-w-1/3 space-y-6">
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={100}
+                height={100}
+              />
+            </Link>
             <p className="font-medium text-foreground/50">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Laudantium ipsa nam illum, ratione architecto excepturi. Earum
@@ -136,9 +143,9 @@ function Footer() {
               ))}
             </ul>
           </div>
-          <div className="grid grid-cols-3 w-full">
+          <div className="grid grid-cols-2 md:grid-cols-3 w-full gap-10">
             {footerSection.map((section) => (
-              <div key={section.title} className="space-y-6">
+              <div key={section.title} className="space-y-3">
                 <h2 className="font-bold text-lg text-primary">
                   {section.title}
                 </h2>
@@ -157,8 +164,8 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className="border-t border-foreground/10 py-1">
-          <div className="font-medium text-foreground/50 text-center flex justify-between">
+        <div className="border-t border-foreground/10 py-2">
+          <div className="font-medium text-foreground/50 text-center flex flex-col md:flex-row items-center md:justify-between gap-2 pb-5">
             <p>© {new Date().getFullYear()} All Rights Reserved</p>
             <div className="flex items-center gap-2">
               <span>Made With</span>

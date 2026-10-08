@@ -3,10 +3,8 @@ import React from "react";
 import IconWrapper from "./icon-wrapper";
 import { useTheme } from "next-themes";
 
-function SystemTheme() {
+function SystemTheme({className} : {className  ?:string}) {
   const { setTheme, theme } = useTheme();
-
-  console.log();
 
   const themeHandler = () => {
     if (theme === "light") {
@@ -20,7 +18,7 @@ function SystemTheme() {
   return (
     <IconWrapper
       onClickHandler={themeHandler}
-      className="hover:bg-third"
+      className={`hover:bg-third ${className}`}
       fill="third"
       icon={theme === "light" ? "tdesign:mode-light" : "iconamoon:mode-dark"}
     />

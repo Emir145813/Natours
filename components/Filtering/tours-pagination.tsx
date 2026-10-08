@@ -10,7 +10,6 @@ import { IToursPaginationProps } from "../interfaces";
 
 function ToursPagination({ props }: IToursPaginationProps) {
   const { setQueryParams } = useQueryParams();
-  console.log(props.lastPage);
 
   return (
     <div className="border w-fit py-1 px-2 rounded-full font-semibold text-foreground/70">

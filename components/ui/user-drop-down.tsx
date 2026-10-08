@@ -42,7 +42,7 @@ function UserDropDown({ props, logout, isLoading }: IUserDropDown) {
         <DropdownMenu>
           <DropdownMenuTrigger
             render={
-              <button className="hover:bg-third border-2 border-third rounded-full flex flex-row-reverse items-center gap-2 pl-4 transition-all duration-300 group">
+              <button className="hover:bg-third border-2 border-third rounded-full flex flex-row-reverse items-center pl-4 transition-all duration-300 group">
                 <div
                   className={`${props?.avatar ? "" : "p-2"} rounded-full bg-third`}
                 >

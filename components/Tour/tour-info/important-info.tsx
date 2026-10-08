@@ -26,15 +26,15 @@ function ImportantInfo({ tour }: Itour) {
   ];
 
   return (
-    <div className="flex gap-40">
+    <div className="flex justify-between items-center">
       {InfoList.map((item) => (
         <div key={item.name}>
-          <div className="text-foreground text-3xl flex items-center gap-1">
+          <div className="text-foreground text-lg sm:text-3xl flex items-center gap-1">
             <Icon icon={item.icon} />
             <span>{item.amount}</span>
-            <span className="text-sm text-ring">{item.suffix}</span>
+            <span className="text-xs sm:text-sm text-ring">{item.suffix}</span>
           </div>
-          <span className="text-ring">{item.name}</span>
+          <span className="text-ring text-sm md:text-lg">{item.name}</span>
         </div>
       ))}
     </div>

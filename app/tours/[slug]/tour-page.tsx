@@ -20,14 +20,14 @@ function TourPage({ slug }: { slug: string }) {
 
   return (
     <div className="pt-32 w-full min-h-screen space-y-8">
-      <div className="h-162 w-full">
+      <div className="h-70 xl:h-162 w-full">
         <ImageGallery images={data.images} isLoading={isLoading} />
       </div>
-      <div className="px-16 space-y-10">
+      <div className="px-5 sm:px-16 space-y-10">
         <div className="flex justify-between items-center">
           <div className="space-y-2">
-            <h1 className="text-3xl font-semibold">{data.name}</h1>
-            <div className="flex gap-1 items-center">
+            <h1 className="text-2xl sm:text-4xl font-semibold">{data.name}</h1>
+            <div className="flex flex-col sm:flex-row gap-1 sm:items-center">
               <div className="flex items-center gap-1">
                 <span>
                   <Icon
@@ -37,10 +37,10 @@ function TourPage({ slug }: { slug: string }) {
                   />
                 </span>
                 <div>
-                  <span className="text-lg font-medium">
+                  <span className="sm:text-lg font-medium">
                     {data.ratingsAverage}{" "}
                   </span>
-                  <span className="opacity-50 text-base">
+                  <span className="opacity-50 sm:text-base">
                     ({data.ratingsQuantity} Reviews)
                   </span>
                 </div>
@@ -48,7 +48,7 @@ function TourPage({ slug }: { slug: string }) {
               <Icon
                 width={24}
                 icon="lucide:dot"
-                className="text-foreground/50"
+                className="text-foreground/50 hidden sm:block"
               />
               <div className="flex items-center gap-1">
                 <Icon
@@ -66,12 +66,11 @@ function TourPage({ slug }: { slug: string }) {
             <div className="flex items-center">
               <span>
                 <Icon
-                  width={36}
                   icon="boxicons:dollar"
-                  className="text-primary"
+                  className="text-primary text-2xl sm:text-4xl"
                 />
               </span>
-              <span className="text-4xl text-primary">
+              <span className="text-2xl sm:text-4xl text-primary">
                 {data.price.toLocaleString()}
               </span>
             </div>
