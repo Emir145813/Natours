@@ -59,8 +59,6 @@ export function TourSortMobile({
   const { setQueryParams } = useQueryParams();
   const selectedSort = sortOptions.find((item)=>item.value === sort);
 
-  console.log();
-
   return (
     <div className={`${className}`}>
       <DropdownMenu>

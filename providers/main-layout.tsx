@@ -23,7 +23,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
     <TanstackProvider>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         enableSystem
         disableTransitionOnChange
       >
